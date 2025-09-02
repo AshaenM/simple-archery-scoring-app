@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js">
+        
+    </script>
+    <title>Archery Score Recording</title>
+</head>
+<body>
+    <header>
+        <h4 class="scores-heading">
+            <span id="fullname"></span>, 
+            <span id="defaultequipment"></span>
+        </h4>
+        <h4 class="scores-heading">
+            <span id="rangeddistance"></span>
+        </h4>
+        <h2 class="scores-heading">
+            End <span id="endnumber"></span>
+        </h2>
+    </header>
+  <br>
+  <main>
+    <div id="arrow_scores-container">
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-1" onclick="focusInput('arrow-score-1')" readonly>
+        </div>
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-2" onclick="focusInput('arrow-score-2')" readonly>
+        </div>
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-3" onclick="focusInput('arrow-score-3')" readonly>
+        </div>
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-4" onclick="focusInput('arrow-score-4')" readonly>
+        </div>
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-5" onclick="focusInput('arrow-score-5')" readonly>
+        </div>
+        <div class="arrow-score">
+            <input type = "text" id="arrow-score-6" onclick="focusInput('arrow-score-6')" readonly>
+        </div>
+    </div>
+    <div id="total-score-container">
+        <div id= "total-text">Total</div>
+        <input type = "text" readonly id="total-score-box">
+    </div>
+    <div id="score-options-container">
+        <div id="row-1-buttons">
+            <div class="score-option-buttons" id="x-button" onclick="addScore('X')">
+                X
+            </div>
+            <div class="score-option-buttons" id="button-10" onclick="addScore('10')">
+                10
+            </div>
+            <div class="score-option-buttons" id="button-9" onclick="addScore('9')">
+                9
+            </div>
+            <div class="score-option-buttons" id="button-8" onclick="addScore('8')">
+                8
+            </div>
+        </div>
+        <div id="row-2-buttons">
+            <div class="score-option-buttons" id="button-4" onclick="addScore('4')">
+                4
+            </div>
+            <div class="score-option-buttons" id="button-5" onclick="addScore('5')">
+                5
+            </div>
+            <div class="score-option-buttons" id="button-6" onclick="addScore('6')">
+                6
+            </div>
+            <div class="score-option-buttons" id="button-7" onclick="addScore('7')">
+                7
+            </div>
+        </div>
+        <div id="row-3-buttons">
+            <div class="score-option-buttons" id="button-3" onclick="addScore('3')">
+                3
+            </div>
+            <div class="score-option-buttons" id="button-2" onclick="addScore('2')">
+                2
+            </div>
+            <div class="score-option-buttons" id="button-1" onclick="addScore('1')">
+                1
+            </div>
+            <div class="score-option-buttons" id="m-button" onclick="addScore('M')">
+                M
+            </div>
+        </div>
+    </div>
+  </main>
+  <footer>
+    <div id="final-options-container">
+        <a type="submit" class="final-options" value="Cancel" href="scores.html">Cancel</a>
+        <a type="submit" class="final-options" value="Save" onclick="nextEnd()" id="save-button">Save</a>
+    </div>
+  </footer>
+  <script>
+    function setFullNameOnLoad() {
+        var fullname = localStorage.getItem('archerFullName');
+        var defaultequipment = localStorage.getItem('archerDefaultEquipment');
+        var endnumber = localStorage.getItem('endNumber');
+        var rangedistance =localStorage.getItem('rangeDistance');
+        if (fullname && defaultequipment) {
+            document.getElementById('fullname').textContent = fullname;
+            document.getElementById('defaultequipment').textContent = defaultequipment;
+            document.getElementById('endnumber').textContent = endnumber;
+            document.getElementById('rangeddistance').textContent = rangedistance;
+        } else {
+            console.log("Full name/ equipment not found in local storage");
+        }
+    }
+    window.onload = function() {
+    setFullNameOnLoad();
+    setEndNumberOnLoad();
+};
+
+    function enterScores() {
+        var score1Value = parseInt(document.getElementById("arrow-score-1").value) || 0;
+        var score2Value = parseInt(document.getElementById("arrow-score-2").value) || 0;
+        var score3Value = parseInt(document.getElementById("arrow-score-3").value) || 0;
+        var score4Value = parseInt(document.getElementById("arrow-score-4").value) || 0;
+        var score5Value = parseInt(document.getElementById("arrow-score-5").value) || 0;
+        var score6Value = parseInt(document.getElementById("arrow-score-6").value) || 0;
+
+        console.log("Score 1:", score1Value);
+        console.log("Score 2:", score2Value);
+        console.log("Score 3:", score3Value);
+        console.log("Score 4:", score4Value);
+        console.log("Score 5:", score5Value);
+        console.log("Score 6:", score6Value);
+
+        var totalScore = score1Value + score2Value + score3Value + score4Value + score5Value + score6Value;
+        console.log("Total Score:", totalScore);
+
+        document.getElementById("total-score-box").value = totalScore; 
+    }
+
+    var lastFocusedInputId = null; 
+
+    function focusInput(inputId) {
+        lastFocusedInputId = inputId;
+    }
+
+    function addScore(score) {
+    if (lastFocusedInputId) {
+        var inputField = document.getElementById(lastFocusedInputId);
+        if (inputField) {
+            if (score === 'X') {
+                inputField.value = 10;
+            } else if (score === 'M') {
+                inputField.value = 0;
+            } else {
+                inputField.value = score;
+            }
+            enterScores(); 
+        }
+    }
+}
+
+    function enterScores() {
+    var scores = [];
+    var inputFields = document.querySelectorAll(".arrow-score input");
+
+    inputFields.forEach(function(inputField) {
+        var score = parseInt(inputField.value) || 0;
+        scores.push(score);
+    });
+
+    for (var i = 1; i < scores.length; i++) {
+        if (scores[i] > scores[i - 1]) {
+            alert("Scores must be entered in descending order.");
+            return; 
+        }
+    }
+    var totalScore = scores.reduce(function(acc, curr) {
+        return acc + curr;
+    }, 0);
+
+    document.getElementById("total-score-box").value = totalScore;
+}
+
+    function nextEnd() {
+        var endNumberElement = document.getElementById("endnumber");
+        var totalEnds = localStorage.getItem("totalEnds");
+        if (endNumberElement) {
+            var currentEndNumber = parseInt(endNumberElement.textContent);
+            if (!isNaN(currentEndNumber)) {
+                if (currentEndNumber + 1 > totalEnds) {
+                    alert("Thanks for submitting all scores!");
+                    window.location.href = "index.html"; 
+                } else {
+                    localStorage.setItem('endNumber', currentEndNumber + 1); 
+                    window.location.href = "scores.html"; 
+                }
+            }
+        }
+    }
+
+    function setEndNumberOnLoad() {
+    var endNumberElement = document.getElementById("endnumber");
+    if (endNumberElement) {
+        var storedEndNumber = localStorage.getItem('endNumber');
+        if (storedEndNumber) {
+            endNumberElement.textContent = storedEndNumber;
+        }
+    }
+}
+
+
+  </script>
+</body>
+</html>

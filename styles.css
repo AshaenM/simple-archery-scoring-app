@@ -1,0 +1,266 @@
+*{
+    box-sizing: border-box;
+    background-color: rgb(12, 136, 109);
+}
+
+h1{
+    font-weight: bolder;
+    text-align: center;
+}
+
+.dropdowns{
+    text-align: center;
+}
+
+.input-boxes{
+    background-color: rgb(173, 216, 207);
+    width:20%;
+    height:35px;
+    border: none;
+}
+
+option{
+    background-color: rgb(173, 216, 207);
+}
+
+#dropdown2-boxes{
+    width:13%;
+}
+
+table, th{
+    align-items: center;
+    text-align: center;
+    border:1px solid white;
+    border-radius: 4px;
+}
+
+#archer-details-table{
+    height:40px;
+    margin: 0 auto;   
+}
+
+.table1-th{
+    width: 300px;
+}
+
+#dropdown3-boxes{
+    width:97%;
+    height:20px;
+    font-weight: bold;
+}
+
+#firstname, #lastname{
+    color:rgb(46, 46, 46);
+    width:100px;
+}
+
+#remove-item-container{
+    width: 100px;
+}
+
+#remove-item{
+    background-color: rgb(14, 90, 73);
+    height:100%;
+    border-radius: 20px;
+    border:2px solid white;
+}
+
+#remove-item-icon{
+    color:red;
+    background:none;
+    text-decoration: none;
+}
+
+#archer-selected-button{
+    background-color: rgb(14, 90, 73);
+    border-radius: 20px;
+    border:2px solid white;
+    width:30%;
+    text-align: center;
+    margin: 0 auto;
+    padding:5px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+#a:hover{
+    cursor: pointer;
+}
+
+#done-icon{
+    text-decoration: none;
+    color:white;
+    background: none;
+}
+
+#ends-table{
+    margin: 20% auto;
+}
+
+#pencil-icon-container{
+    background-color: rgb(14, 90, 73);
+    border-radius: 20px;
+    border:2px solid white;
+    width:30%;
+    text-align: center;
+    margin: 0 auto;
+    padding:5px;
+}
+
+#pencil-icon{
+    color:white;
+    background:none;
+    text-decoration: none;
+    border: none;
+}
+
+#pencil-icon:hover{
+    cursor: pointer;
+}
+
+#fullname, #ends-details{
+    color: white;
+    background-color: rgb(14, 90, 73);
+}
+
+::placeholder{
+    color:rgba(255, 255, 255, 0.563);
+}
+
+#ends-input{
+    border:none;
+    background-color: rgb(14, 90, 73);
+    width:100%;
+    color:white;
+}
+
+.table2-th{
+    width: 450px;
+}
+
+.scores-heading{
+    text-align: center;
+}
+
+.scores-heading #fullname{
+    background:none;
+    color: black;
+}
+
+#arrow_scores-container, #total-score-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#arrow_scores-container .arrow-score{
+    background-color: #f1f1f1;
+    width: 100px;
+    height:60px;
+    border-radius: 4px;
+    text-align: center;
+    margin:10px;
+}
+
+#arrow_scores-container .arrow-score input{
+    width:100%;
+    height:100%;
+    border:2px solid white;
+    text-align: center;
+    font-size: 200%;
+    border-radius: 4px;
+    background-color: rgb(14, 90, 73);
+    color: white;
+}
+
+#total-text{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#total-score-box{
+    width: 100px;
+    height:60px;
+    border:2px solid white;
+    border-radius: 4px;
+    background-color: rgb(14, 90, 73);
+    color: white;
+    font-size: 200%;
+    text-align: center;
+}
+
+#score-options-container{
+    border: 1px solid black;
+    width:18%;
+    height:200px;
+    margin: 20px auto;
+}
+
+.score-option-buttons{
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 7px 0 7px;
+    padding-top: 20px;
+}
+
+.score-option-buttons:hover{
+    cursor: pointer;
+}
+
+#row-1-buttons, #row-2-buttons, #row-3-buttons{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#x-button, #button-10, #button-9{
+    background-color: yellow;
+}
+
+#button-8, #button-7{
+    background-color: red;
+}
+
+#button-6, #button-5{
+    background-color: blue;
+    color:white;
+}
+
+#button-4, #button-3{
+    background-color: black;
+    color:white;
+}
+
+#button-2, #button-1, #m-button{
+    background-color: white;
+}
+
+#final-options-container{
+    margin-top: 20px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.final-options{
+    border: 2px solid white;
+    border-radius: 8px;
+    color:white;
+    font-weight: bold;
+    width:130px;
+    padding:4px;
+    margin-left: 10px;
+    background-color: rgb(14, 90, 73);
+    text-decoration: none;
+    text-align: center;
+}
+
+#save-button:hover{
+    cursor:pointer;
+}

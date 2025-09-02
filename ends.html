@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css">
+        <script src="scripts.js"></script>
+        <title>Archery Ends Recording</title>
+    </head>
+    <body>
+        <main>
+            <table id ="ends-table">
+                <form action="scores.html" id="ends-form">
+                    <tr>
+                        <th id="fullname" class="table2-th">
+                            
+                        </th>
+                        <th id="pencil-icon-container" rowspan="2" class="table2-th">
+                            
+                                <input type="submit" value="&#x270E;" id="pencil-icon" onclick="submitEndsForm(event)">
+                            
+                        </th>
+                    </tr>
+                    <tr>
+                        <th id= "ends-details" class="table2-th">
+                            <input type="text" pattern="\d+\/\d+ \(\d+m \d+cm\)"
+                            placeholder="Please enter end number, range and distance. Eg: 1/5 (50m 122cm)"
+                            id="ends-input" Title="Input must be in the format: '1/5 (50m 122cm)'">
+                        </th>
+                    </tr>
+                </form>
+            </table>
+        </main>
+    </body>
+</html>

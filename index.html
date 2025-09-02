@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "styles.css">
+        <script src="scripts.js"></script>
+        <title>Archery Score Recording</title>
+    </head>
+    <body>
+        <header>
+            <h1>Choose round</h2>
+            <br>
+            <div id = "dropdown1" class = "dropdowns">
+                <select class="input-boxes" id="dropdown1-boxes">
+                    <option value="Melbourne, 90 arrows">Melbourne, 90 arrows</option>
+                    <option value="Sydney, 70 arrows">Sydney, 70 arrows</option>
+                    <option value="Brisbane, 90 arrows">Brisbane, 90 arrows</option>
+                    <option value="Canberra, 60 arrows">Canberra, 60 arrows</option>
+                </select>
+            </div>
+        </header>
+        <br>
+        <main>
+            <h1>Choose archer</h2>
+            <div id = "dropdown2" class = "dropdowns">
+                <select class="input-boxes" id="dropdown2-boxes">
+                    <option value="Irene Moser">Irene Moser</option>
+                    <option value="Bobby Bobson">Bobby Bobson</option>
+                    <option value="Liam Neeson">Liam Neeson</option>
+                    <option value="John Doe">John Doe</option>
+                </select>
+            </div>
+            <br><br>
+            <div id="table-container">
+                <table id ="archer-details-table">
+                    <th id="firstname" class="table1-th">
+                        
+                    </th>
+                    <th id= "lastname" class="table1-th">
+
+                    </th>
+                    <th class="table1-th">
+                        <div id = "dropdown3" class = "dropdowns">
+                            <select class="input-boxes" id="dropdown3-boxes">
+                                <option value="Recurve">Recurve</option>
+                                <option value="Compound">Compound</option>
+                                <option value="Recurve Barebow">Recurve Barebow</option>
+                                <option value="Compound Barebow">Compound Barebow</option>
+                                <option value="Longbow">Longbow</option>
+                            </select>
+                        </div>
+                    </th>
+                    <th id="remove-item-container" class="table1-th">
+                        <div id="remove-item"><a href="" id="remove-item-icon">&#x2717;</a></div>
+                    </th>
+                </table>
+            </div>
+        </main>
+        <footer>
+            <div id ="archer-selected-button"><a id="done-icon" onclick="redirectSecondPage()">Done</a></div>
+        </footer>
+    </body>
+</html>
